@@ -147,7 +147,7 @@ def get_min2(my_list):
     min_num = my_list[0]
     for i in range(len(my_list)):
         if my_list[i] < min_num:
-        min_num = my_list[i]
+            min_num = my_list[i]
     return min_num
 
 print(get_min2(my_list))
