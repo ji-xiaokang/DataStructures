@@ -80,3 +80,32 @@ def seletcSort(alist):
 alist = [26,54,93,17,77,31,44,55,20]
 seletcSort(alist)
 print(alist)
+
+
+''' 
+    三、插入排序 ：总是保持一个位置靠前的已经排好的字表 [54] [26,93,17,77,31,44,55,20],
+        然后每一个新的数据项被“插入”到前面的子表中，排好的第一个字表就增加了一项
+        alist = [54,26,93,17,77,31,44,55,20]
+        分成两个字表  [54] [26,93,17,77,31,44,55,20]
+        第1步    [26,54]   [93,17,77,31,44,55,20]  插入26
+        第2步    [26,54,93]   [17,77,31,44,55,20]  插入93
+        第3步    [17,26,54,93]   [77,31,44,55,20]  插入17
+        第4步    [17,26,54,77,93]   [31,44,55,20]  插入77
+        第5步    [17,26,31,54,77,93]   [44,55,20]  插入31
+        第6步    [17,26,31,44,54,77,93]   [55,20]  插入44
+        第7步    [17,26,31,44,54,55,77,93]  [20]   插入55
+        第8步    [17,20,26,31,44,54,55,77,93] []   插入20
+def insertSort(alist):
+    for index in range(1,len(alist)):
+        currentValue = alist[index]
+        position = index
+        while position > 0 and alist[position-1] > currentValue:
+            alist[position] = alist[position - 1]
+            position = position - 1
+            alist[position] = currentValue
+alist = [54,26,93,17,77,31,44,55,20]
+insertSort(alist)
+print(alist)
+
+
+'''
